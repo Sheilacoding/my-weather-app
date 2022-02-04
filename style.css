@@ -1,0 +1,61 @@
+h1 {
+    color: black;
+    text-align: center;
+    color: blueviolet;
+    font-size: 50px;
+    padding: 10px;
+  }
+  h2 {
+    text-align: center;
+  }
+  p {
+    text-align: center;
+  }
+  
+  body {
+    background-color: white;
+  }
+  .tempe {
+    font-size: 50px;
+    color: blueviolet;
+    position: relative;
+    right: -75px;
+  }
+  
+  .sun-icon {
+    font-size: 100px;
+    color: rgb(230, 199, 63);
+    text-align: center;
+    width: 100%;
+    padding: 20px;
+  }
+  .click {
+    display: block;
+    margin: 0 auto;
+  }
+  .city {
+    display: block;
+    margin: 0 auto;
+    width: 300px;
+  }
+  .weather-app {
+    border: 1px solid #dadde1;
+    padding: 15px;
+    margin: 20px auto;
+    max-width: 600px;
+  }
+  .current-loc {
+    display: block;
+    margin: 20px auto;
+    background-color: #4caf50;
+    border: none;
+    color: white;
+    border-radius: 3px;
+    padding: 5px;
+  }
+  .units {
+    position: relative;
+    top: -30px;
+    right: -70px;
+  }
+  
