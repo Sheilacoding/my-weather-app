@@ -9,6 +9,11 @@ function showTemperature(response) {
       response.data.wind.speed
     );
   }
+
+  let iconElement = document.querySelector("#sun-icon")
+  iconElement.setAttribute("i",  `http://openweathermap.org/img/wn/${response.data.weather[0].icon }@2x.png`)
+
+
   function search(city) {
     let apiKey = "82535288afd2b2e976894696765c114b";
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
