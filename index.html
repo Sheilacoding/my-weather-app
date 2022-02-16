@@ -32,10 +32,13 @@
             <span class="tempe" id="tempe"></span>
 
             <span class="units">
-              <a id = "celsuis-link">°C |
-            <a id = "fahreheit-link">°F</a>
+              <a href ="#" id = "celsuis-link">°C |
+            <a href = "#" id = "fahreheit-link">°F</a>
           </span>
-          <i class="fas fa-cloud-sun sun-icon" id = "sun-icon"></i>
+  
+
+          <img  src= "https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png" class = "icon" id = "icon"/>
+          <p class ="description" id = "description"> Sunny</p>
           </div>
           <div class="col 6">
             <ul>
@@ -45,6 +48,7 @@
             </ul>
           </div>
         </div>
+        <br>
 
         <div class="row">
           <div class="col-3">
@@ -64,22 +68,26 @@
 
         <div class="mb-3 city">
           <form>
+            <div class="row">
+              <div class= "col-9">
             <input
-              type="text"
-              placeholder=" Enter your city"
+              type="search"
+              placeholder=" Enter city"
               class="form-control city"
               id="exampleInputEmail1"
               aria-describedby="emailHelp"
               autofocus="on"
             />
-
-            <br />
-            <button type="submit" class="btn btn-primary submit">
-              Submit
-            </button>
-            <button type="submit" class="current-loc" id = "current-loc">
-              Get current location
-            </button>
+          </div>
+            <div  class = "col-3">
+            <input type="submit" class="click" id = "click"
+              value ="search"/>
+            </div>
+        
+            <input type="submit" class="current-loc" id = "current-loc"
+              value = "Get current location"
+            />
+          </div>
           </form>
         </div>
       </div>

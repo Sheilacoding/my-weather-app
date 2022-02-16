@@ -19,25 +19,30 @@ h1 {
     font-size: 50px;
     color: blueviolet;
     position: relative;
-    right: -75px;
+    right: -10px;
   }
   
-  .sun-icon {
-    font-size: 50px;
-    color: rgb(230, 199, 63);
-    text-align: center;
-    width: 100%;
-    padding: 20px;
+  .icon {
+    font-size: 10px;
+    position: relative;
+    float: left;
+  
   }
-  .click {
+  .click{
     display: block;
-    margin: 0 auto;
+    margin: 20px auto;
+    background-color: #6a9fa7;
+    border: none;
+    color: white;
+    border-radius: 3px;
+    padding: 5px;
   }
   .city {
     display: block;
-    margin: 0 auto;
+    margin: 20px auto;
     width: 300px;
   }
+
   .weather-app {
     border: 1px solid #dadde1;
     padding: 15px;
@@ -47,16 +52,21 @@ h1 {
   .current-loc {
     display: block;
     margin: 20px auto;
-    background-color: #4caf50;
+    background-color: #75a776;
     border: none;
     color: white;
-    border-radius: 3px;
+    border-radius: 10px;
     padding: 5px;
+  
+  }
+  .description{
+    text-align: left;
+    color: rgb(33,33,33);
   }
   .units {
     position: relative;
     top: -30px;
-    right: -70px;
+    right: -10px;
   }
   .code{
       text-align: center;

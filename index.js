@@ -3,16 +3,46 @@ function showTemperature(response) {
     document.querySelector("#tempe").innerHTML = Math.round(
       response.data.main.temp
     );
+    
   
     document.querySelector("#humidity").innerHTML = response.data.main.humidity;
     document.querySelector("#wind").innerHTML = Math.round(
       response.data.wind.speed
     );
+    let descriptionElement = document.querySelector("#description");
+    descriptionElement.innerHTML = response.data.weather[0].description;
+
+    
+
+  function displayFahrenheit(event){
+    event.preventDefault()
+    let fahrenheitTemp = ((Math.round(response.data.main.temp))* 9/5)+ 32
+    let temperatureElement= document.querySelector("#tempe");
+
+    temperatureElement.innerHTML = Math.round(fahrenheitTemp);
+
   }
+    let fahrenheitLink = document.querySelector("#fahreheit-link");
+    fahrenheitLink.addEventListener( "click", displayFahrenheit);
 
-  let iconElement = document.querySelector("#sun-icon")
-  iconElement.setAttribute("i",  `http://openweathermap.org/img/wn/${response.data.weather[0].icon }@2x.png`)
 
+    function displayCelsuis(event){
+      event.preventDefault()
+      let temperatureElement= document.querySelector("#tempe");
+      temperatureElement.innerHTML = Math.round(response.data.main.temp);
+  
+    }
+      let celsuisLink = document.querySelector("#celsuis-link");
+      celsuisLink.addEventListener( "click", displayCelsuis);
+  
+
+    
+
+
+  //let iconElement = document.querySelector("#icon")
+  //iconElement.setAttribute("src",`http://openweathermap.org/img/wn/${response.data.weather[0].icon }@2x.png`)
+  
+  }
 
   function search(city) {
     let apiKey = "82535288afd2b2e976894696765c114b";
@@ -47,6 +77,8 @@ function showTemperature(response) {
   currentLocation.addEventListener("click", displayCurrentLoc);
   
   search("Kumasi");
+
+
   // date
   function UpdateDate(date) {
     let now = new Date();
