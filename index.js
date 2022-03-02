@@ -36,13 +36,42 @@ function showTemperature(response) {
       celsuisLink.addEventListener( "click", displayCelsuis);
   
 
-    
-
-
   let iconElement = document.querySelector("#icon");
   iconElement.setAttribute("src",`http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
   
   }
+
+  function displayForecast(response){
+    let forecastElement= document.querySelector("#forecast");
+
+    let forecastHTML =`<div class = "row">`;
+    let days= ["Tue", "Wed", "Thu"];
+    days.forEach(function(day){
+      forecastHTML = 
+      forecastHTML + 
+      `
+            <div class="col-2">
+  
+              <div class = "weather-forcast-date">${day} </div>
+              <img 
+              src = "http://openweathermap.org/img/wn/04d@2x.png"
+              alt = ""
+              width = "36"
+              />
+  
+             <div class = "weather-forecast-temperature">
+               <span class = "weather-temperature-max">18°</span> 
+               <span class = "weather-temperature-min">10°</span>
+            </div>
+  
+          </div>
+  
+          `;
+    })
+         forecastHTML = forecastHTML + `</div>`
+         forecastElement.innerHTML = forecastHTML;
+  }
+      
 
   function search(city) {
     let apiKey = "82535288afd2b2e976894696765c114b";
@@ -56,6 +85,13 @@ function showTemperature(response) {
     let city = document.querySelector("#exampleInputEmail1").value;
     search(city);
   }
+  function getForecast(coordinates){
+    let apiKey = "82535288afd2b2e976894696765c114b";
+    let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`
+    axios.get(apiUrl).then(displayForecast);
+
+  }
+  
   
   let submitForm = document.querySelector("form");
   submitForm.addEventListener("submit", enterCity);
@@ -77,6 +113,7 @@ function showTemperature(response) {
   currentLocation.addEventListener("click", displayCurrentLoc);
   
   search("Kumasi");
+  getForecast(response.data.coord);
 
 
   // date
